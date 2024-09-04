@@ -6,18 +6,6 @@ on:
         - main
  
 jobs:
-    build:
-        runs-on: ubuntu-latest
-        steps:
-        - uses: actions/checkout@v2
-        - name: build-push
-          uses: docker/build-push-action@v1
-          with:
-            username: seborok
-            password: ${{ secrets.GITHUB_TOKEN }}
-            registry: docker.io
-            repository: seborok/cd
-            tag_with_sha: true
     sonarcloud:
         name: SonarCloud
         runs-on: ubuntu-latest
